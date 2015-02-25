@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(MultilayerPerceptron)
+project(MultilayerPerceptronDemo)
 
-set(MAIN_SRCS src/main.cc src/MultilayerPerceptron.cc)
+set(MAIN_SRCS main.cc ../MultilayerPerceptron.cc)
 
 
 #OpenGL

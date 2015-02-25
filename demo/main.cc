@@ -5,7 +5,7 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <math.h>
-#include "MultilayerPerceptron.h"
+#include "../MultilayerPerceptron.h"
 
 #define PI 3.1415926535
 
