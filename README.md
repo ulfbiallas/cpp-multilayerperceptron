@@ -56,9 +56,9 @@ and how the mapping gets better and better due to the training.
 
 [1] set point color to red
 
-[2] set point color to blue
+[2] set point color to green
 
-[3] set point color to green
+[3] set point color to blue
 
 [click] set a point
 
