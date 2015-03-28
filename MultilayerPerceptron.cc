@@ -43,9 +43,9 @@ void MultilayerPerceptron::init() {
 	
 	resetWeights();
 		
-	WeightMatrix *w;
+	WeightMatrix *weightMatrix;
 	for(int h=0; h<H-1; ++h) {
-		w = &(weights[h]);
+		weightMatrix = &(weights[h]);
 	}
 		
 }
@@ -154,19 +154,19 @@ float MultilayerPerceptron::train(float eta_) {
 	for(t=0; t<trainingSet.size(); ++t) {
 		te = &(trainingSet[t]);
 		vector<float> x = te->in;
-		vector<float> y_soll = te->out;
-		vector<float> y_ist = classify(x);
+		vector<float> y_desired = te->out;
+		vector<float> y_actual = classify(x);
 		
 		// calculate global error
 		float err = 0;
-		for(i=0; i<y_ist.size(); ++i) {
-			err += pow(y_soll[i] - y_ist[i], 2);
+		for(i=0; i<y_actual.size(); ++i) {
+			err += pow(y_desired[i] - y_actual[i], 2);
 		}
 		trainingSetError += err*err;
 
 		// calculate error in output layer (H-1)
 		for(i=0; i<layers[H-1].dim; ++i) {
-			layers[H-1].err[i] = y_soll[i] - y_ist[i];
+			layers[H-1].err[i] = y_desired[i] - y_actual[i];
 		}
 		
 		// backpropagate the error
